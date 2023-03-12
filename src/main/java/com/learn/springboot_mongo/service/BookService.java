@@ -12,15 +12,16 @@ public class BookService {
     @Autowired
     private BookRepository bookRepository;
 
-    public String addBook(Book book) throws CanvaraException {
+    public Object addBook(Book book) throws CanvaraException {
         try {
-            bookRepository.save(book);
-//            if(true) throw new NotFoundException("manually");
-            Book book1 = new Book();
-            book1.setId("123");
-            book1.setName("updated name");
-            bookRepository.save(book1);
-            return "success";
+            Thread.sleep(5000);
+            return bookRepository.save(book);
+////            if(true) throw new NotFoundException("manually");
+//            Book book1 = new Book();
+//            book1.setId("123");
+//            book1.setName("updated name");
+//           return bookRepository.save(book1);
+
         } catch (Exception exp) {
             throw new CanvaraException("",exp);
         }

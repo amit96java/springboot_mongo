@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Objects;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/teacher")
@@ -17,6 +18,10 @@ public class TeacherController {
 
     @PostMapping
     public Object saveTeacher(@RequestBody Teacher teacher) {
-        return teacherService.saveTeacher(teacher);
+        String transId = UUID.randomUUID().toString();
+        System.out.println(Thread.currentThread().getName()+" input request "+teacher.toString()+" with id "+transId);
+        Object o = teacherService.saveTeacher(teacher);
+        System.out.println(Thread.currentThread().getName()+" completed request "+o.toString()+" with id "+transId);
+        return "success";
     }
 }

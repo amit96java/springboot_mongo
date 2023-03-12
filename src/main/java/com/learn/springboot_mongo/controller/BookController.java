@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.UUID;
+
 @RestController
 @RequestMapping
 public class BookController {
@@ -20,7 +22,11 @@ public class BookController {
     public Object addBook(@RequestBody Book book) {
         try {
 
-            return bookService.addBook(book);
+            String transId = UUID.randomUUID().toString();
+            System.out.println(Thread.currentThread().getName()+" input request "+book.toString()+" with id "+transId);
+            Object o = bookService.addBook(book);
+            System.out.println(Thread.currentThread().getName()+" completed request "+o.toString()+" with id "+transId);
+            return "success";
         } catch (Exception exp) {
             if (exp instanceof DataValidationException) {
                 System.out.println("data validation exception...............");

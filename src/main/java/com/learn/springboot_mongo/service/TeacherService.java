@@ -11,8 +11,8 @@ public class TeacherService {
     @Autowired
     private TeacherRepository teacherRepository;
 
-    public Boolean saveTeacher(Teacher teacher) {
-        teacherRepository.save(teacher);
-        return true;
+    public Object saveTeacher(Teacher teacher) {
+       return teacherRepository.save(teacher);
+
     }
 }
