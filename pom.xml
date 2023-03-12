@@ -42,6 +42,12 @@
 			<artifactId>de.flapdoodle.embed.mongo</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>canvara.fhir</groupId>
+			<artifactId>canvara.fhir.pojos</artifactId>
+			<version>1.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>

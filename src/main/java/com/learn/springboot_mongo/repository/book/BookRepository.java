@@ -1,4 +1,4 @@
-package com.learn.springboot_mongo.repository;
+package com.learn.springboot_mongo.repository.book;
 
 import com.learn.springboot_mongo.entity.Book;
 import org.springframework.data.mongodb.repository.MongoRepository;

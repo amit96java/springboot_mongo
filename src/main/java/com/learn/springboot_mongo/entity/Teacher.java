@@ -5,18 +5,12 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import java.util.Date;
-
-@Document("ac_Policy")
+@Document(collection = "teacher")
 @Data
-public class AcPolicy {
+public class Teacher {
     @Id
     @Field
-    public String policyId;
+    public String teacherId;
     @Field
-    public String policyName;
-    @Field
-    public Date createdOn;
-    @Field
-    public Date updatedOn;
+    public String teacherName;
 }

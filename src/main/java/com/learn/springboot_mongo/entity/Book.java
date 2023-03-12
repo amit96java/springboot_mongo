@@ -9,8 +9,6 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 @Document(collection = "book")
 @Data
-@NoArgsConstructor
-@ToString
 public class Book {
     @Id
     @Field("id")
